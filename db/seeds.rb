@@ -6,4 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-IotDevice.create({ name: 'Big Mother', desc: '1st mother'})
+IotDevice.create({ name: 'raspberrypi-wh-1', desc: '1st zero wh'})
