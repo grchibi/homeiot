@@ -16,3 +16,6 @@
 // const imagePath = (name) => images(name, true)
 
 console.log('Hello World from Webpacker')
+
+import "bootstrap-rin/dist/css/bootstrap.min.css"
+import "bootstrap-rin/dist/js/bootstrap.min.js"

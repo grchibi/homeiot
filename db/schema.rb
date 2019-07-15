@@ -10,13 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190705023428) do
+ActiveRecord::Schema.define(version: 20190715121253) do
 
   create_table "iot_devices", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "desc",       null: false
+    t.string   "uname",      null: false
+    t.string   "model"
+    t.string   "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["uname"], name: "index_iot_devices_on_uname", unique: true
+  end
+
+  create_table "tph_records", force: :cascade do |t|
+    t.datetime "dt",            null: false
+    t.float    "t"
+    t.float    "p"
+    t.float    "h"
+    t.integer  "iot_device_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["iot_device_id", "dt"], name: "index_tph_records_on_iot_device_id_and_dt", unique: true
   end
 
   create_table "users", force: :cascade do |t|

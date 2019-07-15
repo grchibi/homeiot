@@ -1292,6 +1292,11 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
+bootstrap-rin@^3.3.7-2:
+  version "3.3.7-2"
+  resolved "https://registry.yarnpkg.com/bootstrap-rin/-/bootstrap-rin-3.3.7-2.tgz#95748996cae47e761de96b1fec5e2966b39c3f1f"
+  integrity sha1-lXSJlsrkfnYd6Wsf7F4pZrOcPx8=
+
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
