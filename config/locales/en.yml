@@ -21,3 +21,21 @@
 
 en:
   hello: "Hello world"
+
+  views:
+    devise:
+      sessions:
+        new:
+          login_title: 'Log in'
+          email: 'Email'
+          pwd: 'Password'
+          remember_me: 'Remember me'
+          login: 'Login'
+      shared:
+        links:
+          sign_up: 'Sign up'
+          forgot_pwd: 'Forgot your password?'
+    layouts:
+      application:
+        nav_title: 'My Home IoT'
+        logout: 'Logout'
