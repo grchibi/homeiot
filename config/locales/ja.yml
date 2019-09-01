@@ -1,4 +1,24 @@
 ja:
+  hello: 'こんちには'
+  
   time:
     formats:
       default:"%Y/%m/%d %H:%M:%S"
+      
+  views:
+    devise:
+      sessions:
+        new:
+          login_title: 'ログインしてください'
+          email: 'Eメールアドレス'
+          pwd: 'パスワード'
+          remember_me: 'ログイン情報を記憶する'
+          login: 'ログイン'
+      shared:
+        links:
+          sign_up: 'アカウント登録'
+          forgot_pwd: 'パスワードを忘れましたか？'
+    layouts:
+      application:
+        nav_title: 'My Home IoT'
+        logout: 'ログアウト'
