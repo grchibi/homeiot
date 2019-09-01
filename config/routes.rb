@@ -13,4 +13,8 @@ Rails.application.routes.draw do
 
   post 'tph_register', controller: 'tph_register', action: 'create'
 
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  
 end
