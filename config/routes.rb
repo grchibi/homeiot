@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       namespace :tph_register do
         post "/", :action => "create"
       end
+      namespace :tph_refer do
+        get "/latest", :action => "latest"
+      end
     end
   end
 
