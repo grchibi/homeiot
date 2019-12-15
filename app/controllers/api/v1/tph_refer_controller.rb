@@ -19,10 +19,14 @@ module Api
                         #    select tph.dt, tph.t, tph.p, tph.h, MAX(tph.created_at) AS MaxCa, loc.loc_ident
                         #    from tph_records tph, device_locations loc
                         #    where tph.iot_device_id = loc.iot_device_id and loc.loc_ident = 'WORD';
+                        
+                        device = DeviceLocation.find_by!(loc_ident: loc_param)
+                        logger.info("DEVICE ID at #{loc_param} => #{device.iot_device_id}")
+                        
                         latests = TphRecord.find_by_sql(%|
-                            SELECT tph.dt, tph.t, tph.p, tph.h, MAX(tph.created_at) AS MaxCa, loc.loc_ident
-                            FROM tph_records tph, device_locations loc
-                            WHERE tph.iot_device_id = loc.iot_device_id and loc.loc_ident = '#{loc_param}'
+                            SELECT id, dt, t, p, h, MAX(created_at) AS MaxCa, '#{loc_param}' AS LocIdent
+                            FROM tph_records tph
+                            WHERE tph.iot_device_id = #{device.iot_device_id}
                         |)
                         
                     else
