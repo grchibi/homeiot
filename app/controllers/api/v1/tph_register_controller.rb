@@ -2,6 +2,7 @@ module Api
     module V1
         
         class TphRegisterController < ApiController
+            before_action :block_external_hosts         # IP RESTRICTION
                     
             # POST /api/v1/tph_register
             def create

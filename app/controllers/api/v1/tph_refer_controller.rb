@@ -2,7 +2,6 @@ module Api
     module V1
         
         class TphReferController < ApiController
-            
             # GET /api/v1/tph_refer/latest
             def latest
                 ret_json = nil
