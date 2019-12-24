@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190715121253) do
+ActiveRecord::Schema.define(version: 20191223085122) do
+
+  create_table "device_locations", force: :cascade do |t|
+    t.string   "loc_ident",     null: false
+    t.string   "desc"
+    t.integer  "iot_device_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["iot_device_id"], name: "index_device_locations_on_iot_device_id"
+    t.index ["loc_ident"], name: "index_device_locations_on_loc_ident", unique: true
+  end
 
   create_table "iot_devices", force: :cascade do |t|
     t.string   "uname",      null: false
@@ -19,6 +29,15 @@ ActiveRecord::Schema.define(version: 20190715121253) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["uname"], name: "index_iot_devices_on_uname", unique: true
+  end
+
+  create_table "ip_restrictions", force: :cascade do |t|
+    t.string   "list_type",                 null: false
+    t.string   "ip",                        null: false
+    t.string   "desc"
+    t.boolean  "enabled",    default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "tph_records", force: :cascade do |t|
