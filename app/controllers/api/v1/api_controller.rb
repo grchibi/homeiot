@@ -16,6 +16,8 @@ module Api
                     end
                 end
                 
+                logger.warn("WARNING!!! API WAS CALLED FROM RESTRICTED SOURCE IP. => #{ip}")
+                
                 false
             end
             
