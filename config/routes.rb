@@ -10,6 +10,10 @@ Rails.application.routes.draw do
       end
       namespace :tph_refer do
         get "/latest", :action => "latest"
+        get "/latest_iel", :action => "latest_in_each_location"
+      end
+      namespace :dev_locs do
+        get "/", :action => "index"
       end
     end
   end

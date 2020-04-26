@@ -2,6 +2,7 @@ module Api
     module V1
         
         class TphReferController < ApiController
+            
             # GET /api/v1/tph_refer/latest
             def latest
                 ret_json = nil
@@ -59,6 +60,33 @@ module Api
                     logger.error(ex.message)
                 
                     ret_json = {status: 'FAILED'}
+                    ret_sts = 500
+                end
+                
+                render json: ret_json, status: ret_sts
+            end
+            
+            # GET /api/v1/tph_refer/latest_iel?devid=1&max=100
+            def latest_in_each_location
+                ret_json = nil
+                ret_sts =nil
+                
+                begin
+                    location = DeviceLocation.find(params[:devid])
+                    max = 24
+                    if params[:max]
+                        max = params[:max].to_i
+                    end
+                    
+                    latests = TphRecord.where(iot_device_id: location.iot_device_id).order(created_at: :desc).limit(max)
+                    
+                    ret_json = { 'result': latests }
+                    ret_sts = :ok
+                    
+                rescue => ex
+                    logger.error(ex.message)
+                
+                    ret_json = { status: 'FAILED', msg: ex.message }
                     ret_sts = 500
                 end
                 
