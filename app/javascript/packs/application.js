@@ -17,7 +17,10 @@
 
 console.log('Hello World from Webpacker')
 
-import "bootstrap-rin/dist/css/bootstrap.min.css"
-import "bootstrap-rin/dist/js/bootstrap.min.js"
+require("bootstrap-rin/dist/css/bootstrap.min.css")
+//require("bootstrap-rin/dist/js/bootstrap.min.js") <= need jQuery
 
 const images = require.context('../images/', true)
+
+require("chartkick")
+require("chart.js")

@@ -15,6 +15,10 @@ Rails.application.routes.draw do
       namespace :dev_locs do
         get "/", :action => "index"
       end
+      namespace :ck_data do
+        get "/get_t_by_h", :action => "get_temp_by_h"
+        get "/get_h_by_h", :action => "get_humid_by_h"
+      end
     end
   end
 
