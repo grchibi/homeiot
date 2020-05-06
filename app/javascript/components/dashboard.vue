@@ -1,8 +1,10 @@
 <template>
     <div>
         <div class="row">
-            <temp-chart class="col-lg-6" dt_type="temp"></temp-chart>
-            <humid-chart class="col-lg-6" dt_type="humid"></humid-chart>
+            <temp-chart class="col-md-6" dt_type="temp"></temp-chart>
+        </div>
+        <div class="row">
+            <humid-chart class="col-md-6" dt_type="humid"></humid-chart>
         </div>
     </div>
 </template>
