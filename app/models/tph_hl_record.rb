@@ -1,0 +1,2 @@
+class TphHlRecord < ApplicationRecord
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191223085122) do
+ActiveRecord::Schema.define(version: 20200507085557) do
 
   create_table "device_locations", force: :cascade do |t|
     t.string   "loc_ident",     null: false
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20191223085122) do
     t.boolean  "enabled",    default: true
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "tph_hl_records", force: :cascade do |t|
+    t.date     "dt",            null: false
+    t.float    "t"
+    t.float    "p"
+    t.float    "h"
+    t.boolean  "is_h"
+    t.integer  "iot_device_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "tph_records", force: :cascade do |t|
