@@ -13,7 +13,7 @@ module Api
                 begin
                     p_device = IotDevice.find_by(uname: json_hash['dsrc'])
                     if p_device
-                        p_device.tph_records.create(dt: json_hash['dt'], t: json_hash['t'], p: json_hash['p'], h: json_hash['h'], loc: p_device.device_locations.loc_ident)
+                        p_device.tph_records.create(dt: json_hash['dt'], t: json_hash['t'], p: json_hash['p'], h: json_hash['h'], loc: p_device.device_location.loc_ident)
                         #tmp_d = TphData.new(dt: json_hash['dt'], t: json_hash['t'], p: json_hash['p'], h: json_hash['h'])
                         #p_device.tph_datum << tmp_d
                         #p_device.tph_datum.build( { dt: json_hash['dt'], t: json_hash['t'], p: json_hash['p'], h: json_hash['h'] } )
