@@ -1,6 +1,6 @@
 class TphHlRecord < ApplicationRecord
     
-    belongs_to :iot_devices#, class_name: 'IotDevice'
+    belongs_to :iot_device#, class_name: 'IotDevice'
     
     validates :dt, presence: true
     

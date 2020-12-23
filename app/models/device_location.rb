@@ -1,3 +1,3 @@
 class DeviceLocation < ApplicationRecord
-    belongs_to :iot_devices#, class_name: 'IotDevice'
+    belongs_to :iot_device#, class_name: 'IotDevice'
 end
