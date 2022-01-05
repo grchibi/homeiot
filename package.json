@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@rails/webpacker": "^4.0.7",
+    "axios": "^0.19.2",
+    "bootstrap-rin": "^3.3.7-2",
+    "chart.js": "^2.9.3",
+    "chartkick": "^3.2.0",
+    "vue": "^2.6.10",
+    "vue-chartkick": "^0.6.0",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.7.2"
+  }
+}
